@@ -189,7 +189,7 @@ header nav ul .login {
   position: relative;
   padding-left: 30px;
   height: 16.7rem;
-  margin-bottom: 2rem;
+  padding-bottom: 80%;
 }
 
 .home .home__background {
@@ -208,11 +208,12 @@ header nav ul .login {
   z-index: -900;
   width: 150%;
   left: -6.9%;
-  max-width: 650px;
 }
 
 .content {
   padding: 0 30px;
+  z-index: 2000;
+  background: #fff;
 }
 
 .content .ad {
