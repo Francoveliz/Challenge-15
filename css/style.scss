@@ -1,0 +1,246 @@
+@import "variables";
+@import "container";
+
+:root {
+  font-size: 18px !important;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  background: #fff;
+}
+
+h1,
+h2,
+h3,
+button,
+li {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.main {
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(238, 243, 246, 1) 50%
+  );
+  padding: 0 1rem;
+  height: 110px;
+  z-index: 5;
+  padding: 0 $mobilePad;
+
+  img {
+    width: 25px;
+  }
+
+  .nav-bar__container {
+    overflow: hidden;
+  }
+
+  nav {
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    background-image: url("../images/bg-pattern-mobile-nav.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    top: 110px;
+    left: $mobilePad;
+    right: $mobilePad;
+    margin: auto;
+    transform: translateY(-100%);
+    transition: 2s ease;
+    z-index: -1;
+    overflow: hidden;
+    visibility: hidden;
+    padding: 0 1.5rem;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.08);
+
+    ul {
+      list-style: none;
+      padding: 0;
+      color: grey;
+      font-size: 1rem;
+      padding-top: 0.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      transition: 0.3s ease;
+
+      li {
+        padding: 8px 0;
+        margin: auto;
+        color: $veryDarkBlue;
+        font-weight: 700;
+      }
+
+      .login {
+        color: $GrayishBlue;
+        border-top: 1px solid $GrayishBlue;
+        margin-top: 1rem;
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
+.nav-active {
+  transform: translateY(1%);
+  visibility: visible;
+}
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  text-align: left;
+
+  .menu-btn__burger {
+    width: 23px;
+    height: 2px;
+    background: #000;
+    border-radius: 5px;
+    transition: 0.5s ease;
+
+    &::before,
+    &::after {
+      @extend .menu-btn__burger;
+      content: "";
+      position: absolute;
+    }
+
+    &::before {
+      transform: translateY(-7px);
+    }
+
+    &::after {
+      transform: translateY(7px);
+    }
+  }
+}
+
+/* Hamburger menu animation */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-10px);
+  background: transparent;
+  box-shadow: none;
+
+  /*-15*/
+  &::before {
+    transform: rotate(45deg) translate(7px, -7px);
+    background: #000;
+  }
+
+  &::after {
+    transform: rotate(-45deg) translate(7px, 7px);
+    background: #000;
+  }
+}
+
+.home {
+  position: relative;
+  padding-left: $mobilePad;
+  height: 16.7rem;
+  margin-bottom: 2rem;
+
+  .home__background {
+    background: $lightGrayishBlue;
+    width: 180%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    z-index: -1000;
+    border-radius: 0 0 0 50px;
+  }
+
+  img {
+    position: relative;
+    z-index: -900;
+    width: 150%;
+    left: -7%;
+    max-width: 650px;
+  }
+}
+
+.content {
+  padding: 0 $mobilePad;
+
+  .ad {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+
+    h3 {
+      background: $veryDarkBlue;
+      color: #fff;
+      padding: 0.1rem 0.6rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin: 0;
+      margin-right: 1rem;
+      border-radius: 10rem;
+    }
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: $GrayishBlue;
+      letter-spacing: 0.2rem;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    line-height: 2.1rem;
+    color: $veryDarkBlue;
+    margin: 0;
+    margin-bottom: 0.8rem;
+  }
+  p {
+    color: $darkGrayishBlue;
+    margin: 0;
+    margin-bottom: 0.8rem;
+  }
+  .cta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+    button {
+      border: none;
+      background: $red;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1.5rem;
+      height: 2.1rem;
+      border-radius: 5px;
+      margin-right: 1rem;
+      letter-spacing: 0.05rem;
+    }
+    p {
+      text-transform: uppercase;
+      font-size: 0.65rem;
+      letter-spacing: 0.15rem;
+      margin: 0;
+      color: $GrayishBlue;
+    }
+  }
+}
