@@ -207,7 +207,7 @@ header nav ul .login {
   position: relative;
   z-index: -900;
   width: 150%;
-  left: -7%;
+  left: -6.9%;
   max-width: 650px;
 }
 
@@ -267,6 +267,7 @@ header nav ul .login {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 5rem;
+  width: 100%;
 }
 
 .content .cta button {
@@ -285,8 +286,7 @@ header nav ul .login {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0 1.5rem;
-  height: 2.1rem;
+  padding: 0.45rem 1.5rem;
   border-radius: 5px;
   margin-right: 1rem;
   letter-spacing: 0.05rem;
